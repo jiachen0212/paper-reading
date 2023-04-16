@@ -52,6 +52,11 @@ CLIP改进合集
 
 #### 2023.04.16  多模态串讲
 https://www.bilibili.com/video/BV1Vd4y1v77v/?vd_source=30d40bd09c8fa9d9f8cfab3eefe7c4da
+
+https://www.bilibili.com/video/BV1fA411Z772/?spm_id_from=333.788&vd_source=30d40bd09c8fa9d9f8cfab3eefe7c4da
+
+总览全局: 
+![多模态](./多模态.png)
 1. ALBEF: 视觉Encoder要复杂于文本Encoder.
     1. ![albef1](./albef1.png)红色圈内做image,text两个模态融合.
     2. momentum distillation: 动量蒸馏(为了克服noisy web data)
@@ -61,8 +66,3 @@ https://www.bilibili.com/video/BV1Vd4y1v77v/?vd_source=30d40bd09c8fa9d9f8cfab3ee
 2. BLIP: text, image怎么各自学习和融合, 在FFN中加以区别
 ![blip1](./blip1.png)
 用大模型洗自己的下游任务数据, 也许可以除噪声数据.
-<br/>
-https://www.bilibili.com/video/BV1fA411Z772/?spm_id_from=333.788&vd_source=30d40bd09c8fa9d9f8cfab3eefe7c4da
-总览全局: 
-![多模态](./多模态.png)
-
