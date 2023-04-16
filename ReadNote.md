@@ -45,11 +45,6 @@ CLIP改进合集
 4. Video: 
     1. CLIP4clip
     2. ActionCLIP
-
-    
-
-
-
-
-
-    
+5. 深度估计: 
+    can language understand depth?
+    ![clud1](./clud1.png)
