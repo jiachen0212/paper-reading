@@ -1,6 +1,6 @@
 # paper reading 💪🏻🔋!!!
 
-#### 2023.04.14 
+#### 2023.04.14 CLIP串讲1
 《ViLT vision and language Transformer》
 https://www.bilibili.com/video/BV14r4y1j74y/?vd_source=30d40bd09c8fa9d9f8cfab3eefe7c4da
 视觉部分摒弃了region feature, running time减少, (虽然train的时间还是很长的..)
@@ -20,7 +20,7 @@ https://www.bilibili.com/video/BV14r4y1j74y/?vd_source=30d40bd09c8fa9d9f8cfab3ee
     3. 对image做部分masking, 甚至没啥用
     4. 最强的还得是image augment!!!
 
-#### 2023.04.14 
+#### 2023.04.14 CLIP串讲2
 https://www.bilibili.com/video/BV1FV4y1p7Lm/?spm_id_from=pageDriver&vd_source=30d40bd09c8fa9d9f8cfab3eefe7c4da
 CLIP改进合集
 1. Segmentation: 
@@ -48,3 +48,21 @@ CLIP改进合集
 5. 深度估计: 
     can language understand depth?
     ![clud1](./clud1.png)
+<br/>
+
+#### 2023.04.16  多模态串讲
+https://www.bilibili.com/video/BV1Vd4y1v77v/?vd_source=30d40bd09c8fa9d9f8cfab3eefe7c4da
+1. ALBEF: 视觉Encoder要复杂于文本Encoder.
+    1. ![albef1](./albef1.png)红色圈内做image,text两个模态融合.
+    2. momentum distillation: 动量蒸馏(为了克服noisy web data)
+        1. onehot label形式的label对于对比学习这类loss并不友好. 网上爬的数据有时候一些负样本也有很多"正确信息"的. 一味惩罚这些负样本并不合适. 所以我们需要: multi-hot label or 它就是另外一个模型的输出(蒸馏就是这样的哟), 就比较好了.
+        ![albef2](./albef2.png)q不是onehot label而是distillation里的softmax score.
+        2. hard negative (正样本附近找负样本)
+2. BLIP: text, image怎么各自学习和融合, 在FFN中加以区别
+![blip1](./blip1.png)
+用大模型洗自己的下游任务数据, 也许可以除噪声数据.
+<br/>
+https://www.bilibili.com/video/BV1fA411Z772/?spm_id_from=333.788&vd_source=30d40bd09c8fa9d9f8cfab3eefe7c4da
+总览全局: 
+![多模态](./多模态.png)
+
