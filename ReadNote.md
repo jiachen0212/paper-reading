@@ -26,8 +26,11 @@ CLIP改进合集
 1. Segmentation: 
     1. language-driven semantic segmentation(有监督学习, 分割标注还是很贵的..clip是无监督的对比学习)
     ![LDSS1](./LDSS1.png)
+        image encoder用的是iccv2021的Vision transformers for dense prediction:
+        ![VTDP.png](./VTDP.png)
+        text encoder用的clip的参数, 冻住不tune.
     2. GroupViT
-    是个只需要text监督不需要分割mask标注的工作. 结果的mask可以分的很准(group block牛逼!)但分类不准. 学会了分割但没学会语义分割(用的也是clip的对比loss,但没用clip的参数).
+    只需要text监督不需要分割mask标注的工作. 结果的mask可以分的很准(group block牛逼!)但分类不准. 学会了分割但没学会语义分割(用的也是clip的对比loss,但没用clip的参数).
     ![GroupViT1](./GroupViT1.png)
     Vit的基础上加上grouping思想(object的一些点聚类扩散到完整mask这个object)
 2. Detection
@@ -66,3 +69,19 @@ https://www.bilibili.com/video/BV1fA411Z772/?spm_id_from=333.788&vd_source=30d40
 2. BLIP: text, image怎么各自学习和融合, 在FFN中加以区别
 ![blip1](./blip1.png)
 用大模型洗自己的下游任务数据, 也许可以除噪声数据.
+
+#### 2023.4.22 大模型分割应用
+1. Vision transformers for dense prediction(language-driven semantic segmentation用的这个出dense image feat)
+    1. ![VTDP.png](./VTDP.png)
+2. maskclip+: Extract free dense labels from clip(2022eccvoral)
+    1. ![maskclip_plus2.png](./maskclip_plus2.png)   用DeepLabv2-ResNet101蒸馏MaskCLIP, 训到一半后开始self-training.
+    2. maskclip+和maskclip的区别:
+    ![maskclip_plus.png](./maskclip_plus.png)
+    ![maskclip_plus1.png](./maskclip_plus1.png)
+3. CAT-Seg
+    1. 按照maskclip+, 从clip中得到dense的image feature.
+    2. 冻住clip的text encoder直接抽特征
+    3. 剩下的就是密集cost计算啥的
+
+
+# 5月继续reading!!!~ 
