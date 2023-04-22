@@ -79,9 +79,8 @@ https://www.bilibili.com/video/BV1fA411Z772/?spm_id_from=333.788&vd_source=30d40
     ![maskclip_plus.png](./maskclip_plus.png)
     ![maskclip_plus1.png](./maskclip_plus1.png)
 3. CAT-Seg
-    1. 按照maskclip+, 从clip中得到dense的image feature.
+    1. 按照maskclip+从clip中得到dense的image feature.
     2. 冻住clip的text encoder直接抽特征
     3. 剩下的就是密集cost计算啥的
-
 
 # 5月继续reading!!!~ 
