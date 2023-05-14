@@ -83,4 +83,6 @@ https://www.bilibili.com/video/BV1fA411Z772/?spm_id_from=333.788&vd_source=30d40
     2. 冻住clip的text encoder直接抽特征
     3. 剩下的就是密集cost计算啥的
 
-# 5月继续reading!!!~ 
+# 5月继续reading!!! [有的, 发公众号啦~]
+
+
